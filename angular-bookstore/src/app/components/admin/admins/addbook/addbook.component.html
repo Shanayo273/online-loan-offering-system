@@ -1,0 +1,39 @@
+<h1>Add Book</h1>
+<form #recievedBook="ngForm">
+
+  <label for="id">Book ID</label>
+  <input type="number" class="form-control" id="id" placeholder="Book id" [(ngModel)]="book.id" name="id">
+  
+  <label for="sku">sku</label>
+  <input type="text" class="form-control" id="sku" placeholder="sku" [(ngModel)]="book.sku" name="sku">
+
+  <label for="name">Book Name</label>
+  <input type="text" class="form-control" id="name" placeholder="Book name" [(ngModel)]="book.name" name="name">
+
+  <label for="description">Book Description</label>
+  <input type="text" class="form-control" id="description" placeholder="Book description" [(ngModel)]="book.description" name="description">
+
+  <label for="unitPrice">Unit Price</label>
+  <input type="number" class="form-control" id="unitPrice" placeholder="Book unit_price" [(ngModel)]="book.unitPrice" name="unitPrice">
+
+  <label for="image_url">Book Image</label>
+  <input type="text" class="form-control" id="imageUrl" placeholder="Book Image" [(ngModel)]="book.imageUrl" name="imageUrl">
+
+  <label for="active">Status</label>
+  <input type="boolean" class="form-control" id="active" placeholder="Status" [(ngModel)]="book.active" name="active">
+
+  <label for="unitsInStock">Units in stock</label>
+  <input type="number" class="form-control" id="unitsInStock" placeholder="units In Stock" [(ngModel)]="book.unitsInStock" name="unitsInStock">
+
+  <label for="createdOn">Created On</label>
+  <input type="date" class="form-control" id="createdOn" placeholder="createdOn" [(ngModel)]="book.createdOn" name="createdOn">
+
+  <label for="updatedOn">Updated On</label>
+  <input type="date" class="form-control" id="updatedOn" placeholder="updatedOn" [(ngModel)]="book.updatedOn" name="updatedOn">
+
+  <label for="category">category ID</label>
+  <input type="number" class="form-control" id="category" placeholder="category" [(ngModel)]="book.category" name="category">
+
+   <br>
+  <button type="button" class="btn btn-success" (click)="addBook()">Save</button>
+</form>

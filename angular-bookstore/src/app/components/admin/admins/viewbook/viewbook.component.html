@@ -1,0 +1,21 @@
+<div class="userDetails">
+    <h2>Book details</h2>
+  
+    <table>
+      <tr>
+        <td>Book Id</td>
+        <td>{{book.id}}</td>
+      </tr>
+      <tr>
+        <td>Book Name</td>
+        <td>{{book.name}}</td>
+      </tr>
+      <tr>
+        <td>Book Stocks</td>
+        <td>{{book.unitsInStock}}</td>
+      </tr>
+  
+    </table>
+    <br>
+    <a class="btn btn-small btn-danger" (click)="deleteBook()"> delete</a>
+  </div>

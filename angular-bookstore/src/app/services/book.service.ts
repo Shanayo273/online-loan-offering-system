@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Book } from '../common/book';
+
 import { BookCategory } from '../common/book-category';
+import { Book } from '../common/book';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +16,19 @@ export class BookService {
   private categoryUrl = "http://localhost:8080/api/v1/book-category";
 
   constructor(private httpClient: HttpClient) { }
+
+  getAllBooks(){
+    return this.httpClient.get<Book[]>('http://localhost:8080/books/getBook');
+  }
+
+  addBook(newBook: Book){
+    return this.httpClient.post<Book>('http://localhost:8080/books/addBook',newBook);
+  }
+
+  deleteBook(id) {
+    return this.httpClient.delete<Book>('http://localhost:8080/books/' + id);
+  }
+
 
   getBooks(theCategoryId: number): Observable<Book[]>{
     const searchUrl = `${this.baseUrl}/search/categoryid?id=${theCategoryId}`;

@@ -1,0 +1,48 @@
+<h1>Users Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addUser()"> add User </a>
+<a class="btn btn-primary mb-3" (click)="addBook()"> add Book </a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td><button type="button" class="btn btn-primary" (click)="viewUser(user.id)">Show Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-adduser *ngIf="action === 'add'" [user]="selectedUser" (userAddedEvent)="refreshData()"></app-adduser>
+    <app-viewuser *ngIf="action === 'view'" [user]="selectedUser" (userDeletedEvent)="refreshData()"></app-viewuser>
+   
+</div>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.id}}</td>
+        <td>{{book.name}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="viewBook(book.id)">Show Details</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+</div>

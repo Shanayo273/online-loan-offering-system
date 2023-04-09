@@ -14,7 +14,20 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminsComponent } from './components/admin/admins/admins.component';
+import { AdduserComponent } from './components/admin/admins/adduser/adduser.component';
+import { ViewuserComponent } from './components/admin/admins/viewuser/viewuser.component';
+import { AddbookComponent } from './components/admin/admins/addbook/addbook.component';
+import { ViewbookComponent } from './components/admin/admins/viewbook/viewbook.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { InstallmentpageComponent } from './components/installmentpage/installmentpage.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+
 //client side paging
 //import { JwPaginationComponent } from 'jw-angular-pagination';
 
@@ -26,8 +39,17 @@ const routes: Routes = [
   {path: 'books', component: BookListComponent},
   {path: 'search/:keyword', component: BookListComponent},
   {path: 'category/:id', component: BookListComponent},
+  {path: 'admin/users', component: AdminsComponent },
+  {path: 'admin/books', component: AddbookComponent},
+  {path:'login',component:LoginComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'adminlogin',component:AdminloginComponent},
+  {path:'installment',component:InstallmentpageComponent},
+  {path:'aboutus',component:AboutusComponent},
+  {path:'contactus',component:ContactusComponent},
   {path: '', redirectTo: '/books', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
+  
 ];
 
 @NgModule({
@@ -40,7 +62,19 @@ const routes: Routes = [
     BookDetailsComponent,
     CartStatusComponent,
     CartDetailsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AdminsComponent,
+    AdduserComponent,
+    ViewuserComponent,
+    AddbookComponent,
+    ViewbookComponent,
+    LoginComponent,
+    RegisterComponent,
+    BoardModeratorComponent,
+    AdminloginComponent,
+    InstallmentpageComponent,
+    AboutusComponent,
+    ContactusComponent
     //client side paging
     //JwPaginationComponent
   ],
@@ -49,6 +83,7 @@ const routes: Routes = [
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
+    FormsModule,      
     RouterModule.forRoot(routes)
   ],
   providers: [

@@ -18,15 +18,15 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="user")
+@Table(name="tbl_user")
 public class User {
     
     @Id
-    @Column(name="user_id", length = 45)
+    @Column(name="id", length = 45)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userid;
     
-    @Column(name="user_name", length = 255)
+    @Column(name="username", length = 255)
 	private String username;
     
     @Column(name="email", length = 255)
